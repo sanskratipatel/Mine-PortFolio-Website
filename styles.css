@@ -1,0 +1,981 @@
+/* Global reset and default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic font and body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c;
+    color: #f0f0f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header styling */
+#header {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header content (floating effect) */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+    transform: rotateY(10deg);
+    animation: float 3s ease-in-out infinite;
+}
+
+.header-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    animation: floatImage 4s infinite ease-in-out;
+}
+
+.header-image img:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transform: rotateY(10deg);
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    color: #00bcd4;
+    margin: 0;
+}
+
+.header-text span {
+    color: #ff9800;
+}
+
+/* 3D Floating Animation */
+@keyframes floatImage {
+    0% {
+        transform: rotate(0) translateY(0);
+    }
+    50% {
+        transform: rotate(15deg) translateY(-20px);
+    }
+    100% {
+        transform: rotate(0) translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Sub-title and section styles */
+.sub-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #00bcd4;
+    text-align: center;
+    position: relative;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+.sub-title:after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #00bcd4;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Floating effect on skills list */
+ul.skills-list li {
+    margin: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+ul.skills-list li:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+ul.skills-list img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+ul.skills-list img:hover {
+    transform: scale(1.1);
+}
+
+/* Glow effect */
+a:hover {
+    text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #ff9800;
+}
+
+/* Floating text animation */
+.header-text h1 span {
+    animation: floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Button hover effects */
+button {
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #ff9800;
+    transform: scale(1.1);
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Menu Styling */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #00bcd4;
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #ff9800;
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(255, 152, 0, 0.6);
+}
+
+/* Menu 3D Button Effect */
+@keyframes button3dEffect {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.menu a:active {
+    animation: button3dEffect 0.2s ease-out;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-text h1 {
+        font-size: 2rem;
+    }
+
+    .header-text p {
+        font-size: 1.1rem;
+    }
+
+    .header-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .skills-list li {
+        margin: 10px;
+        width: 25%;
+        text-align: center;
+    }
+
+    ul.skills-list img {
+        width: 40px;
+        height: 40px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu a {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
+
+/* 3D Box Effect for Sections (Experience, Education, Certificates, Projects) */
+.section-box {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Additional Hover Effects for Specific Sections */
+
+#education .section-box,
+#certificates .section-box,
+#projects .section-box {
+    animation: sectionSlide 0.8s ease-in-out;
+}
+
+@keyframes sectionSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Experience Section Styling */
+#experience {
+    padding: 50px 0;
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+    animation: fadeIn 2s ease-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Sub-title Animation for Experience */
+#experience .sub-title {
+    font-size: 2.5rem;
+    color: #ff9800;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+/* Experience List Styling */
+#experience ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+#experience li {
+    margin-bottom: 30px;
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: rotateY(10deg);
+    animation: floatExperience 3s ease-in-out infinite;
+}
+
+#experience li:hover {
+    transform: scale(1.05) rotateY(0deg);
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.5);
+}
+
+#experience li em {
+    color: #00bcd4;
+    font-style: normal;
+}
+
+/* Animation for fading in the entire experience section */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow Effect on Title */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px #00bcd4, 0 0 10px #ff9800, 0 0 15px #ff9800;
+    }
+    50% {
+        text-shadow: 0 0 15px #00bcd4, 0 0 20px #ff9800, 0 0 25px #ff9800;
+    }
+    100% {
+        text-shadow: 0 0 5px #00bcd4, 0 0 10px #ff9800, 0 0 15px #ff9800;
+    }
+}
+
+/* Floating Effect for Experience Items */
+@keyframes floatExperience {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Skills/Experience List Animation */
+ul li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+ul li:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+ul li strong {
+    color: #ff9800;
+}
+
+ul li em {
+    color: #00bcd4;
+}
+
+/* 3D Hover Effect on List Items */
+ul li:hover {
+    transform: scale(1.05) rotateY(5deg);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #experience {
+        padding: 30px 0;
+    }
+
+    #experience .sub-title {
+        font-size: 2rem;
+    }
+
+    #experience li {
+        margin-bottom: 20px;
+    }
+}
+/* Education Section Styling */
+#education {
+    margin: 40px 0;
+    text-align: center;
+    color: #f0f0f0;
+    animation: fadeIn 2s ease-in-out;
+    transform: perspective(1000px);
+}
+
+/* Sub-title Styling for Education */
+#education .sub-title {
+    font-size: 2.5rem;
+    color: #00bcd4;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+/* 3D Floating effect for Education list items */
+#education ul li {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    transform: rotateY(10deg);
+    animation: floatItem 3s ease-in-out infinite;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#education ul li:hover {
+    transform: scale(1.1) rotateY(10deg);
+    filter: brightness(1.2);
+}
+
+/* Animation for text in the education section */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px #00bcd4, 0 0 10px #00bcd4, 0 0 15px #ff9800;
+    }
+    50% {
+        text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #ff9800;
+    }
+    100% {
+        text-shadow: 0 0 5px #00bcd4, 0 0 10px #00bcd4, 0 0 15px #ff9800;
+    }
+}
+
+/* Floating effect for the list items */
+@keyframes floatItem {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Icon Styling */
+#education a {
+    display: inline-block;
+    margin-top: 20px;
+    animation: rotateIcon 4s infinite ease-in-out;
+}
+
+#education a img {
+    width: 48px;
+    height: 48px;
+}
+
+/* Animation for rotating icon */
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #education .sub-title {
+        font-size: 2rem;
+    }
+    #education ul li {
+        font-size: 1.1rem;
+    }
+}
+/* Keyframes for fade-in effect */
+@keyframes fadeInCertificates {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Certifications Section Styling */
+#certificates {
+    padding: 50px 0;
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+    animation: fadeInCertificates 2s ease-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Sub-title Animation for Certifications */
+#certificates .sub-title {
+    font-size: 2.5rem;
+    color: #ff9800;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+/* Certifications List Styling */
+#certificates ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+#certificates li {
+    margin-bottom: 30px;
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: rotateY(10deg);
+    animation: floatCertificates 3s ease-in-out infinite;
+}
+
+#certificates li:hover {
+    transform: scale(1.05) rotateY(0deg);
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.5);
+}
+
+#certificates li span {
+    color: #00bcd4;
+    font-style: normal;
+}
+
+/* Animation for fading in the entire certificates section */
+@keyframes fadeInCertificates {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow Effect on Title */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px #00bcd4, 0 0 10px #ff9800, 0 0 15px #ff9800;
+    }
+    50% {
+        text-shadow: 0 0 15px #00bcd4, 0 0 20px #ff9800, 0 0 25px #ff9800;
+    }
+    100% {
+        text-shadow: 0 0 5px #00bcd4, 0 0 10px #ff9800, 0 0 15px #ff9800;
+    }
+}
+
+/* Floating Effect for Certifications Items */
+@keyframes floatCertificates {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #certificates {
+        padding: 30px 0;
+    }
+
+    #certificates .sub-title {
+        font-size: 2rem;
+    }
+
+    #certificates li {
+        margin-bottom: 20px;
+    }
+}
+/* Project Section Styling */
+#services {
+    padding: 50px 0;
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+    animation: fadeIn 2s ease-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Sub-title Animation for Projects */
+#services .sub-title {
+    font-size: 2.5rem;
+    color: #ff9800;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+/* Individual Project Item Styling */
+#services .serviceslist > div {
+    background-color: #3c3c3c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    transform: rotateY(10deg);
+    animation: floatProject 3s ease-in-out infinite;
+}
+
+#services .serviceslist > div:hover {
+    transform: scale(1.05) rotateY(0deg);
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.5);
+}
+
+#services .serviceslist > div h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#services .serviceslist > div p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Link Styling for Project Details */
+#services .serviceslist > div a {
+    color: rgb(65, 98, 94);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover Effect for Project Links */
+#services .serviceslist > div a:hover {
+    color: #ff9800;
+}
+
+/* Fade-in Effect for the Entire Project Section */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow Effect on Project Section Title */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px #00bcd4, 0 0 10px #ff9800, 0 0 15px #ff9800;
+    }
+    50% {
+        text-shadow: 0 0 15px #00bcd4, 0 0 20px #ff9800, 0 0 25px #ff9800;
+    }
+    100% {
+        text-shadow: 0 0 5px #00bcd4, 0 0 10px #ff9800, 0 0 15px #ff9800;
+    }
+}
+
+/* Floating Effect for Project Items */
+@keyframes floatProject {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Project Section */
+@media (max-width: 768px) {
+    #services {
+        padding: 30px 0;
+    }
+
+    #services .sub-title {
+        font-size: 2rem;
+    }
+
+    #services .serviceslist > div {
+        margin-bottom: 20px;
+    }
+
+    #services .serviceslist > div h2 {
+        font-size: 1.6rem;
+    }
+
+    #services .serviceslist > div p {
+        font-size: 0.9rem;
+    }
+}
+
+    /* About Section Styling */
+    #about {
+        padding: 50px 0;
+        background-color: #2d2d2d;
+        color: #f0f0f0;
+        animation: fadeIn 2s ease-out;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+
+    /* Sub-title Animation for About */
+    #about .sub-title {
+        font-size: 2.5rem;
+        color: #ff9800;
+        text-align: center;
+        margin-bottom: 40px;
+        animation: textGlow 3s ease-in-out infinite;
+    }
+
+    /* Education Section Styling */
+    #education {
+        background-color: #3c3c3c;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        margin-bottom: 30px;
+        transform: rotateY(10deg);
+        animation: floatSection 3s ease-in-out infinite;
+    }
+
+    #education a {
+        color: rgb(65, 98, 94);
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #education a:hover {
+        color: #ff9800;
+    }
+
+    /* Skills Section Styling */
+    #skills {
+        padding: 50px 0;
+        background-color: #3c3c3c;
+        color: #f0f0f0;
+        animation: fadeIn 2s ease-out;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+    }
+
+    #skills .sub-title {
+        font-size: 2.5rem;
+        color: #ff9800;
+        text-align: center;
+        margin-bottom: 40px;
+        animation: textGlow 3s ease-in-out infinite;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+
+    .skills-list li {
+        list-style: none;
+    }
+
+    .skills-list img {
+        width: 80px;
+        height: 80px;
+        transition: transform 0.3s ease;
+    }
+
+    .skills-list img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes textGlow {
+        0% {
+            text-shadow: 0 0 5px #00bcd4, 0 0 10px #ff9800, 0 0 15px #ff9800;
+        }
+        50% {
+            text-shadow: 0 0 15px #00bcd4, 0 0 20px #ff9800, 0 0 25px #ff9800;
+        }
+        100% {
+            text-shadow: 0 0 5px #00bcd4, 0 0 10px #ff9800, 0 0 15px #ff9800;
+        }
+    }
+
+    @keyframes floatSection {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+/* Footer Section Styling */
+footer {
+    background-color: #2d2d2d;
+    padding: 50px 0;
+    color: #f0f0f0;
+    animation: fadeIn 2s ease-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Footer Title Animation */
+footer .sub-title {
+    font-size: 2.5rem;
+    color: #ff9800;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+/* Footer Links Styling */
+footer .footer-col a {
+    display: block;
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect for Footer Links */
+footer .footer-col a:hover {
+    color: #ff9800;
+    text-decoration: underline;
+}
+
+/* Animation for the entire Footer */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow Effect for Footer Title */
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 5px #00bcd4, 0 0 10px #ff9800, 0 0 15px #ff9800;
+    }
+    50% {
+        text-shadow: 0 0 15px #00bcd4, 0 0 20px #ff9800, 0 0 25px #ff9800;
+    }
+    100% {
+        text-shadow: 0 0 5px #00bcd4, 0 0 10px #ff9800, 0 0 15px #ff9800;
+    }
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 30px 0;
+    }
+
+    footer .sub-title {
+        font-size: 2rem;
+    }
+
+    footer .footer-col a {
+        font-size: 1rem;
+    }
+}
+/* Animation for About Me Section */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-title {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.animated-text {
+    animation: fadeIn 2s ease-out;
+    animation-delay: 0.5s; /* Delay to make text appear after title */
+}
