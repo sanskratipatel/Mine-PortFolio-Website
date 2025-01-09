@@ -17,7 +17,7 @@ Access the live portfolio here: [Sanskrati Patel Portfolio](https://sanskrati-pa
 
 ## 💻 Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript, React.js
+- **Frontend**: HTML, CSS, JavaScript
 - **Hosting**: Netlify
 - **Design**: Responsive design for optimal viewing across devices
 
